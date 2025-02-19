@@ -27,11 +27,17 @@ class CategoryScreen extends ConsumerWidget {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => showModalBottomSheet(
+        onPressed: () => showDialog(
           context: context,
-          builder: (context) => AddCategoryWidget(),
+          builder: (context) => Dialog(
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: AddCategoryWidget(),
+            ),
+          ),
         ),
-        child: const Icon(Icons.add),
+        child: Icon(Icons.add),
       ),
     );
   }
